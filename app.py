@@ -8,4 +8,8 @@ def render_home_page():
 
 
 if __name__ == '__main__':
-   app.run()
+   if len(sys.argv) == 1:
+        port = 5000
+    else:
+        port = int(float(sys.argv[1])) #the custom port you want
+    app.run(host='0.0.0.0', port=port)
